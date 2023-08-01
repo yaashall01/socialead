@@ -1,0 +1,17 @@
+GET http://localhost:3001/ 
+
+
+###
+
+POST http://localhost:3001/auth/login 
+Content-Type: application/json
+
+{
+    "email": "yaashall@example.com",
+    "password": "mypassword"
+}
+
+###
+GET http://localhost:3001/users/64a0dcabce7fa889852ff829
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTE3ZmU5OTgxMmE2YWQwMDBlOWYyMSIsImlhdCI6MTY5MDY3MjA0N30.P0Q_ufTxE45eKIGjygC91g5-ucD1Cgeio8KgLf4uis4
+

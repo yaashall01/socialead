@@ -2,22 +2,26 @@ import User from '../models/User.js';
 
 // Function getUser
 
-export const getUser = (req, res) => {
-    const {id} = req.param;
-    User.findOne({ _id: id }, (err, user) => {
-        if (err) {
-          console.error(err);
-          return;
-        }
-        if (!user) {
-          console.log('User not found');
-          return;
-        }
-        console.log('User:', user);
-        res.send(user);
-      });
-    
-}
+
+export const getUser = async (req, res) => {
+  
+  try {
+    const { id } = req.params; // Use "req.params" instead of "req.param" to get the parameter value
+
+    const user = await User.findOne({ _id: id });
+
+    if (!user) {
+      console.log('User not found');
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    console.log('User:', user);
+    res.json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
 
 // Function getUserFriend
 
