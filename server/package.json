@@ -17,11 +17,11 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Server side of the web app socialead",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "yaashall",
